@@ -9,6 +9,6 @@ public final class BundledLanguages {
     @SubscribeEvent
     public static void start(ServerStartedEvent event) {
         NativeToolchains.configure(ComputerStorage.base().getParent().resolve("toolchains"));
-        NativeToolchains.start();
+        if (NativeToolchains.supported()) NativeToolchains.start();
     }
 }

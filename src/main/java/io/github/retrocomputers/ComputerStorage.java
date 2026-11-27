@@ -4,21 +4,19 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.LinkOption;
 import java.nio.file.Path;
-import java.nio.file.StandardCopyOption;
-import java.util.Locale;
 import java.util.UUID;
 import net.neoforged.fml.loading.FMLPaths;
 
 final class ComputerStorage {
     static Path base() {
-        return FMLPaths.GAMEDIR.get().resolve("mods/retrocomputers/computers");
+        return FMLPaths.GAMEDIR.get().resolve("mods").resolve("retrocomputers").resolve("computers");
     }
 
     static String validName(String value) {
-        String name = value.strip().toLowerCase(Locale.ROOT);
-        if (name.isEmpty() || name.length() > 32 || !name.codePoints().allMatch(c ->
+        String name = PortableFiles.key(value.strip());
+        if (name.isEmpty() || name.length() > 32 || !PortableFiles.validComponent(name) || !name.codePoints().allMatch(c ->
                 Character.isLetterOrDigit(c) || c == '_' || c == '-')) {
-            throw new IllegalArgumentException("Use 1–32 letters, digits, _ or -");
+            throw new IllegalArgumentException("Use 1–32 letters, digits, _ or -; Windows device names are reserved");
         }
         return name;
     }
@@ -49,7 +47,7 @@ final class ComputerStorage {
         if (Files.exists(next, LinkOption.NOFOLLOW_LINKS)) throw new IOException("Name already exists");
         if (!Files.readString(previous.resolve(".computer-id")).strip().equals(identity.toString()))
             throw new IOException("Computer identity mismatch");
-        Files.move(previous, next, StandardCopyOption.ATOMIC_MOVE);
+        PortableFiles.rename(previous, next);
         return next.toRealPath();
     }
 }

@@ -5,11 +5,9 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.LinkOption;
-import java.nio.file.StandardCopyOption;
 import java.nio.file.StandardOpenOption;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Locale;
 import java.util.Map;
 import java.util.NavigableMap;
 import java.util.TreeMap;
@@ -28,10 +26,10 @@ final class ComputerFiles {
     Path root() { return root; }
 
     void mount(Path folder) throws IOException {
-        root = folder;
+        root = folder.toAbsolutePath().normalize().toRealPath();
         // Migrate saves from versions that kept files in block entity NBT.
         for (var entry : entries.entrySet()) {
-            Path destination = checked(folder.resolve(entry.getKey().substring(1)));
+            Path destination = checked(root.resolve(entry.getKey().substring(1)));
             if (Files.exists(destination, LinkOption.NOFOLLOW_LINKS)) continue;
             if (entry.getValue().folder()) Files.createDirectories(destination);
             else {
@@ -48,10 +46,10 @@ final class ComputerFiles {
         Map<String, Path> paths = new TreeMap<>();
         try (var walk = Files.walk(root, 17)) {
             for (Path file : walk.filter(path -> !path.equals(root)).toList()) {
-                if (file.getFileName().toString().equals(".computer-id")) continue;
+                if (file.getParent().equals(root) && PortableFiles.key(file.getFileName().toString()).equals(".computer-id")) continue;
                 checked(file);
-                String path = "/" + root.relativize(file).toString().replace(java.io.File.separatorChar, '/');
-                String key = path.toLowerCase(Locale.ROOT);
+                String path = PortableFiles.relative(root, file);
+                String key = PortableFiles.key(path);
                 if (fresh.containsKey(key)) throw new IOException("File names differ only by case: " + path);
                 boolean folder = Files.isDirectory(file, LinkOption.NOFOLLOW_LINKS);
                 long size = folder ? 0 : Files.size(file);
@@ -74,16 +72,7 @@ final class ComputerFiles {
     }
 
     private Path checked(Path path) throws IOException {
-        Path normalized = path.toAbsolutePath().normalize();
-        if (!normalized.startsWith(root) || normalized.equals(root.resolve(".computer-id")))
-            throw new IOException("Path is outside the computer folder");
-        Path current = root;
-        if (Files.isSymbolicLink(current)) throw new IOException("Symbolic links are not supported");
-        for (Path part : root.relativize(normalized)) {
-            current = current.resolve(part);
-            if (Files.isSymbolicLink(current)) throw new IOException("Symbolic links are not supported");
-        }
-        return normalized;
+        return PortableFiles.checked(root, path);
     }
 
     private Path diskPath(String path) throws IOException {
@@ -95,7 +84,7 @@ final class ComputerFiles {
 
     String readText(String path) throws IOException {
         refreshDisk();
-        String key = resolve(path);
+        String key = resolveFileArgument(path);
         if (!exists(key) || folder(key)) throw new IOException("File not found: " + path);
         if (entries.get(key).binary()) throw new IOException(message("binary").getString());
         return entries.get(key).text();
@@ -103,7 +92,7 @@ final class ComputerFiles {
 
     Path runtimeSource(String path) throws IOException {
         refreshDisk();
-        String key = resolve(path);
+        String key = resolveFileArgument(path);
         if (!exists(key) || folder(key)) throw new IOException("File not found: " + path);
         return diskPath(key);
     }
@@ -116,12 +105,12 @@ final class ComputerFiles {
 
     boolean fileExists(String path) throws IOException {
         refreshDisk();
-        return exists(resolve(path));
+        return exists(resolveFileArgument(path));
     }
 
     List<String> names(String path) throws IOException {
         refreshDisk();
-        String key = resolve(path);
+        String key = resolveFileArgument(path);
         if (!folder(key)) throw new IOException("Directory not found");
         return entries.keySet().stream().filter(entry -> parent(entry).equals(key))
             .map(entry -> entry.substring(entry.lastIndexOf('/') + 1)).toList();
@@ -152,7 +141,7 @@ final class ComputerFiles {
 
     private int pathSize(String path) {
         Path actual = physical.get(path);
-        return actual == null || root == null ? bytes(path) : bytes("/" + root.relativize(actual).toString().replace(java.io.File.separatorChar, '/'));
+        return actual == null || root == null ? bytes(path) : bytes(PortableFiles.relative(root, actual));
     }
 
     Map<String, Object> statistics(int capacity) throws IOException {
@@ -272,8 +261,14 @@ final class ComputerFiles {
         }
     }
 
+    private String resolveFileArgument(String argument) throws IOException {
+        try { return resolve(argument); }
+        catch (FileError error) { throw new IOException(message(error.key).getString()); }
+    }
+
     private String resolve(String argument) {
         require(!argument.isEmpty(), "bad_path");
+        argument = PortableFiles.key(argument.replace('\\', '/'));
         List<String> segments = new ArrayList<>();
         String combined = argument.startsWith("/") ? argument : directory + "/" + argument;
         for (String segment : combined.split("/")) {
@@ -282,9 +277,8 @@ final class ComputerFiles {
                 require(!segments.isEmpty(), "root");
                 segments.removeLast();
             } else {
-                require(segment.length() <= 48 && segment.codePoints().allMatch(c ->
-                    Character.isLetterOrDigit(c) || c == '_' || c == '-' || c == '.'), "bad_path");
-                segments.add(segment.toLowerCase(Locale.ROOT));
+                require(segment.length() <= 48 && PortableFiles.validComponent(segment), "bad_path");
+                segments.add(segment);
             }
         }
         String path = "/" + String.join("/", segments);
@@ -298,7 +292,7 @@ final class ComputerFiles {
         Entry old = entries.get(path);
         require(old == null || !old.folder(), "is_directory");
         require(old != null || entries.size() < MAX_ENTRIES, "entry_limit");
-        int nameSize = root == null ? bytes(path) : bytes("/" + root.relativize(diskPath(path)).toString().replace(java.io.File.separatorChar, '/'));
+        int nameSize = root == null ? bytes(path) : bytes(PortableFiles.relative(root, diskPath(path)));
         long total = used() + (old == null ? nameSize : -old.size()) + entry.size();
         require(total <= capacity || old != null && total <= used(), "full");
         if (root != null) {
@@ -308,7 +302,7 @@ final class ComputerFiles {
                 Path temporary = Files.createTempFile(destination.getParent(), ".writing-", ".tmp");
                 try {
                     Files.writeString(temporary, entry.text());
-                    Files.move(temporary, destination, StandardCopyOption.ATOMIC_MOVE, StandardCopyOption.REPLACE_EXISTING);
+                    PortableFiles.replace(temporary, destination);
                 } finally { Files.deleteIfExists(temporary); }
             }
             physical.put(path, destination);

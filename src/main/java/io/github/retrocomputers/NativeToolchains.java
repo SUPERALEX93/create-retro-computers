@@ -44,6 +44,7 @@ final class NativeToolchains {
     static String inside(Path path) throws IOException { return "/" + root().relativize(path).toString().replace(java.io.File.separatorChar, '/'); }
 
     static boolean ready() {
+        if (!supported()) return false;
         try {
             return Files.isRegularFile(root().getParent().resolve(".complete"), LinkOption.NOFOLLOW_LINKS)
                 && Files.isExecutable(path("/usr/bin/bwrap")) && Files.isExecutable(path("/jdk/bin/javac"))
@@ -63,6 +64,7 @@ final class NativeToolchains {
     }
 
     static synchronized CompletableFuture<Void> start() {
+        if (!supported()) return CompletableFuture.completedFuture(null);
         if (installation == null) installation = CompletableFuture.runAsync(() -> {
             try { install(); }
             catch (Exception error) {
