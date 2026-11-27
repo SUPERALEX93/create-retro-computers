@@ -46,7 +46,7 @@ displayName="${mod_name}" #mandatory
 
 # The description text for the mod (multi line!) (#mandatory)
 description='''
-Example mod description.
+An addon for Create. Manufacture retro computers on Create assembly lines, power them with Forge Energy and connect terminals. Supports Create wrenches, engineer goggles and Ponder tutorials.
 '''
 
 # The [[mixins]] block allows you to declare your mixin config to FML so that it gets loaded.
@@ -91,3 +91,13 @@ Example mod description.
 # stop your mod loading on the server for example.
 #[features.${mod_id}]
 #openGLVersion="[3.2,)"
+
+[[dependencies.${mod_id}]]
+modId="create"
+type="required"
+versionRange="[6.0.10,)"
+ordering="AFTER"
+side="BOTH"
+
+[[mixins]]
+config="retrocomputers.mixins.json"

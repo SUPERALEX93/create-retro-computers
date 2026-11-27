@@ -1,0 +1,94 @@
+{
+  "type": "create:sequenced_assembly",
+  "ingredient": {
+    "item": "retrocomputers:board"
+  },
+  "loops": 2,
+  "results": [
+    {
+      "id": "retrocomputers:cpu"
+    }
+  ],
+  "sequence": [
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "retrocomputers:incomplete_cpu"
+        },
+        {
+          "item": "retrocomputers:silicon_wafer"
+        }
+      ],
+      "results": [
+        {
+          "id": "retrocomputers:incomplete_cpu"
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "retrocomputers:incomplete_cpu"
+        },
+        {
+          "item": "create:golden_sheet"
+        }
+      ],
+      "results": [
+        {
+          "id": "retrocomputers:incomplete_cpu"
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "retrocomputers:incomplete_cpu"
+        },
+        {
+          "item": "minecraft:redstone"
+        }
+      ],
+      "results": [
+        {
+          "id": "retrocomputers:incomplete_cpu"
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "retrocomputers:incomplete_cpu"
+        },
+        {
+          "item": "retrocomputers:solder"
+        }
+      ],
+      "results": [
+        {
+          "id": "retrocomputers:incomplete_cpu"
+        }
+      ]
+    },
+    {
+      "type": "create:pressing",
+      "ingredients": [
+        {
+          "item": "retrocomputers:incomplete_cpu"
+        }
+      ],
+      "results": [
+        {
+          "id": "retrocomputers:incomplete_cpu"
+        }
+      ]
+    }
+  ],
+  "transitional_item": {
+    "id": "retrocomputers:incomplete_cpu"
+  }
+}

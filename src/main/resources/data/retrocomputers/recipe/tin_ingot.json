@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:smelting",
+  "ingredient": {
+    "item": "retrocomputers:tin_dust"
+  },
+  "result": {
+    "id": "retrocomputers:tin_ingot"
+  },
+  "cookingtime": 200,
+  "experience": 0.3
+}

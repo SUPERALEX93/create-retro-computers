@@ -1,0 +1,19 @@
+{
+  "type": "create:compacting",
+  "ingredients": [
+    {
+      "item": "retrocomputers:silicon_dust"
+    },
+    {
+      "item": "retrocomputers:silicon_dust"
+    },
+    {
+      "item": "minecraft:quartz"
+    }
+  ],
+  "results": [
+    {
+      "id": "retrocomputers:silicon_blank"
+    }
+  ]
+}

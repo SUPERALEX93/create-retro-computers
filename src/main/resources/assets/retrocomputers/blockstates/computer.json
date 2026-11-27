@@ -1,0 +1,36 @@
+{
+  "variants": {
+    "facing=north,powered=false": {
+      "model": "retrocomputers:block/computer",
+      "y": 0
+    },
+    "facing=north,powered=true": {
+      "model": "retrocomputers:block/computer",
+      "y": 0
+    },
+    "facing=east,powered=false": {
+      "model": "retrocomputers:block/computer",
+      "y": 90
+    },
+    "facing=east,powered=true": {
+      "model": "retrocomputers:block/computer",
+      "y": 90
+    },
+    "facing=south,powered=false": {
+      "model": "retrocomputers:block/computer",
+      "y": 180
+    },
+    "facing=south,powered=true": {
+      "model": "retrocomputers:block/computer",
+      "y": 180
+    },
+    "facing=west,powered=false": {
+      "model": "retrocomputers:block/computer",
+      "y": 270
+    },
+    "facing=west,powered=true": {
+      "model": "retrocomputers:block/computer",
+      "y": 270
+    }
+  }
+}

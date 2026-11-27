@@ -1,0 +1,15 @@
+{
+  "type": "create:cutting",
+  "ingredients": [
+    {
+      "item": "retrocomputers:silicon_boule"
+    }
+  ],
+  "results": [
+    {
+      "id": "retrocomputers:silicon_wafer",
+      "count": 4
+    }
+  ],
+  "processing_time": 140
+}

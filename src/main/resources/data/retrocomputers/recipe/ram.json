@@ -1,0 +1,110 @@
+{
+  "type": "create:sequenced_assembly",
+  "ingredient": {
+    "item": "retrocomputers:board"
+  },
+  "loops": 2,
+  "results": [
+    {
+      "id": "retrocomputers:ram"
+    }
+  ],
+  "sequence": [
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "retrocomputers:incomplete_ram"
+        },
+        {
+          "item": "minecraft:redstone"
+        }
+      ],
+      "results": [
+        {
+          "id": "retrocomputers:incomplete_ram"
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "retrocomputers:incomplete_ram"
+        },
+        {
+          "item": "retrocomputers:silicon_wafer"
+        }
+      ],
+      "results": [
+        {
+          "id": "retrocomputers:incomplete_ram"
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "retrocomputers:incomplete_ram"
+        },
+        {
+          "item": "retrocomputers:copper_trace"
+        }
+      ],
+      "results": [
+        {
+          "id": "retrocomputers:incomplete_ram"
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "retrocomputers:incomplete_ram"
+        },
+        {
+          "item": "retrocomputers:resin"
+        }
+      ],
+      "results": [
+        {
+          "id": "retrocomputers:incomplete_ram"
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "retrocomputers:incomplete_ram"
+        },
+        {
+          "item": "retrocomputers:solder"
+        }
+      ],
+      "results": [
+        {
+          "id": "retrocomputers:incomplete_ram"
+        }
+      ]
+    },
+    {
+      "type": "create:pressing",
+      "ingredients": [
+        {
+          "item": "retrocomputers:incomplete_ram"
+        }
+      ],
+      "results": [
+        {
+          "id": "retrocomputers:incomplete_ram"
+        }
+      ]
+    }
+  ],
+  "transitional_item": {
+    "id": "retrocomputers:incomplete_ram"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "type": "create:splashing",
+  "ingredients": [
+    {
+      "item": "retrocomputers:crushed_silicon"
+    }
+  ],
+  "results": [
+    {
+      "id": "retrocomputers:silicon_dust"
+    }
+  ]
+}

@@ -1,0 +1,110 @@
+{
+  "type": "create:sequenced_assembly",
+  "ingredient": {
+    "item": "retrocomputers:chassis_frame"
+  },
+  "loops": 1,
+  "results": [
+    {
+      "id": "retrocomputers:keyboard"
+    }
+  ],
+  "sequence": [
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "retrocomputers:incomplete_keyboard"
+        },
+        {
+          "item": "retrocomputers:keycaps"
+        }
+      ],
+      "results": [
+        {
+          "id": "retrocomputers:incomplete_keyboard"
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "retrocomputers:incomplete_keyboard"
+        },
+        {
+          "item": "minecraft:stone_button"
+        }
+      ],
+      "results": [
+        {
+          "id": "retrocomputers:incomplete_keyboard"
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "retrocomputers:incomplete_keyboard"
+        },
+        {
+          "item": "retrocomputers:board"
+        }
+      ],
+      "results": [
+        {
+          "id": "retrocomputers:incomplete_keyboard"
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "retrocomputers:incomplete_keyboard"
+        },
+        {
+          "item": "retrocomputers:wiring_harness"
+        }
+      ],
+      "results": [
+        {
+          "id": "retrocomputers:incomplete_keyboard"
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "retrocomputers:incomplete_keyboard"
+        },
+        {
+          "item": "retrocomputers:solder"
+        }
+      ],
+      "results": [
+        {
+          "id": "retrocomputers:incomplete_keyboard"
+        }
+      ]
+    },
+    {
+      "type": "create:pressing",
+      "ingredients": [
+        {
+          "item": "retrocomputers:incomplete_keyboard"
+        }
+      ],
+      "results": [
+        {
+          "id": "retrocomputers:incomplete_keyboard"
+        }
+      ]
+    }
+  ],
+  "transitional_item": {
+    "id": "retrocomputers:incomplete_keyboard"
+  }
+}

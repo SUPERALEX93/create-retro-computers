@@ -1,0 +1,126 @@
+{
+  "type": "create:sequenced_assembly",
+  "ingredient": {
+    "item": "retrocomputers:chassis_frame"
+  },
+  "loops": 2,
+  "results": [
+    {
+      "id": "retrocomputers:motion_speedometer"
+    }
+  ],
+  "sequence": [
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "retrocomputers:incomplete_motion_speedometer"
+        },
+        {
+          "item": "create:speedometer"
+        }
+      ],
+      "results": [
+        {
+          "id": "retrocomputers:incomplete_motion_speedometer"
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "retrocomputers:incomplete_motion_speedometer"
+        },
+        {
+          "item": "create:precision_mechanism"
+        }
+      ],
+      "results": [
+        {
+          "id": "retrocomputers:incomplete_motion_speedometer"
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "retrocomputers:incomplete_motion_speedometer"
+        },
+        {
+          "item": "retrocomputers:board"
+        }
+      ],
+      "results": [
+        {
+          "id": "retrocomputers:incomplete_motion_speedometer"
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "retrocomputers:incomplete_motion_speedometer"
+        },
+        {
+          "item": "retrocomputers:wiring_harness"
+        }
+      ],
+      "results": [
+        {
+          "id": "retrocomputers:incomplete_motion_speedometer"
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "retrocomputers:incomplete_motion_speedometer"
+        },
+        {
+          "item": "create:brass_sheet"
+        }
+      ],
+      "results": [
+        {
+          "id": "retrocomputers:incomplete_motion_speedometer"
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "retrocomputers:incomplete_motion_speedometer"
+        },
+        {
+          "item": "retrocomputers:crt_glass"
+        }
+      ],
+      "results": [
+        {
+          "id": "retrocomputers:incomplete_motion_speedometer"
+        }
+      ]
+    },
+    {
+      "type": "create:pressing",
+      "ingredients": [
+        {
+          "item": "retrocomputers:incomplete_motion_speedometer"
+        }
+      ],
+      "results": [
+        {
+          "id": "retrocomputers:incomplete_motion_speedometer"
+        }
+      ]
+    }
+  ],
+  "transitional_item": {
+    "id": "retrocomputers:incomplete_motion_speedometer"
+  }
+}

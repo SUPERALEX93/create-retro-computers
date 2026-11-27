@@ -1,0 +1,13 @@
+{
+  "values": [
+    "retrocomputers:computer",
+    "retrocomputers:monitor",
+    "retrocomputers:keyboard",
+    "retrocomputers:silicon_ore",
+    "retrocomputers:tin_ore",
+    "retrocomputers:interface_module",
+    "retrocomputers:tilt_sensor",
+    "retrocomputers:motion_speedometer",
+    "retrocomputers:altimeter"
+  ]
+}

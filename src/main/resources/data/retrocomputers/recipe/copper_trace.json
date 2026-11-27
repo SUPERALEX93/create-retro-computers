@@ -1,0 +1,15 @@
+{
+  "type": "create:cutting",
+  "ingredients": [
+    {
+      "item": "create:copper_sheet"
+    }
+  ],
+  "results": [
+    {
+      "id": "retrocomputers:copper_trace",
+      "count": 4
+    }
+  ],
+  "processing_time": 100
+}

@@ -1,0 +1,110 @@
+{
+  "type": "create:sequenced_assembly",
+  "ingredient": {
+    "item": "retrocomputers:board"
+  },
+  "loops": 2,
+  "results": [
+    {
+      "id": "retrocomputers:modem"
+    }
+  ],
+  "sequence": [
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "retrocomputers:incomplete_modem"
+        },
+        {
+          "item": "create:electron_tube"
+        }
+      ],
+      "results": [
+        {
+          "id": "retrocomputers:incomplete_modem"
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "retrocomputers:incomplete_modem"
+        },
+        {
+          "item": "retrocomputers:silicon_wafer"
+        }
+      ],
+      "results": [
+        {
+          "id": "retrocomputers:incomplete_modem"
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "retrocomputers:incomplete_modem"
+        },
+        {
+          "item": "retrocomputers:wiring_harness"
+        }
+      ],
+      "results": [
+        {
+          "id": "retrocomputers:incomplete_modem"
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "retrocomputers:incomplete_modem"
+        },
+        {
+          "item": "create:brass_sheet"
+        }
+      ],
+      "results": [
+        {
+          "id": "retrocomputers:incomplete_modem"
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "retrocomputers:incomplete_modem"
+        },
+        {
+          "item": "retrocomputers:solder"
+        }
+      ],
+      "results": [
+        {
+          "id": "retrocomputers:incomplete_modem"
+        }
+      ]
+    },
+    {
+      "type": "create:pressing",
+      "ingredients": [
+        {
+          "item": "retrocomputers:incomplete_modem"
+        }
+      ],
+      "results": [
+        {
+          "id": "retrocomputers:incomplete_modem"
+        }
+      ]
+    }
+  ],
+  "transitional_item": {
+    "id": "retrocomputers:incomplete_modem"
+  }
+}

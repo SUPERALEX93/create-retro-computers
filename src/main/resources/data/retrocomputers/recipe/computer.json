@@ -1,0 +1,107 @@
+{
+  "type": "create:sequenced_assembly",
+  "ingredient": {
+    "item": "retrocomputers:chassis_frame"
+  },
+  "loops": 1,
+  "results": [
+    {
+      "id": "retrocomputers:computer"
+    }
+  ],
+  "sequence": [
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "retrocomputers:incomplete_computer"
+        },
+        {
+          "item": "create:iron_sheet"
+        }
+      ],
+      "results": [
+        {
+          "id": "retrocomputers:incomplete_computer"
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "retrocomputers:incomplete_computer"
+        },
+        {
+          "item": "retrocomputers:tin_plate"
+        }
+      ],
+      "results": [
+        {
+          "id": "retrocomputers:incomplete_computer"
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "retrocomputers:incomplete_computer"
+        },
+        {
+          "item": "retrocomputers:wiring_harness"
+        }
+      ],
+      "results": [
+        {
+          "id": "retrocomputers:incomplete_computer"
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "retrocomputers:incomplete_computer"
+        },
+        {
+          "item": "create:brass_sheet"
+        }
+      ],
+      "results": [
+        {
+          "id": "retrocomputers:incomplete_computer"
+        }
+      ]
+    },
+    {
+      "type": "create:pressing",
+      "ingredients": [
+        {
+          "item": "retrocomputers:incomplete_computer"
+        }
+      ],
+      "results": [
+        {
+          "id": "retrocomputers:incomplete_computer"
+        }
+      ]
+    },
+    {
+      "type": "create:cutting",
+      "ingredients": [
+        {
+          "item": "retrocomputers:incomplete_computer"
+        }
+      ],
+      "results": [
+        {
+          "id": "retrocomputers:incomplete_computer"
+        }
+      ]
+    }
+  ],
+  "transitional_item": {
+    "id": "retrocomputers:incomplete_computer"
+  }
+}

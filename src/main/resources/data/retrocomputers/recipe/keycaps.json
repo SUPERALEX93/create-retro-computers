@@ -1,0 +1,15 @@
+{
+  "type": "create:cutting",
+  "ingredients": [
+    {
+      "item": "retrocomputers:resin"
+    }
+  ],
+  "results": [
+    {
+      "id": "retrocomputers:keycaps",
+      "count": 4
+    }
+  ],
+  "processing_time": 100
+}

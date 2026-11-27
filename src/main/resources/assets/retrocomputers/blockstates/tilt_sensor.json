@@ -1,0 +1,20 @@
+{
+  "variants": {
+    "facing=south": {
+      "model": "retrocomputers:block/tilt_sensor",
+      "y": 0
+    },
+    "facing=west": {
+      "model": "retrocomputers:block/tilt_sensor",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "retrocomputers:block/tilt_sensor",
+      "y": 180
+    },
+    "facing=east": {
+      "model": "retrocomputers:block/tilt_sensor",
+      "y": 270
+    }
+  }
+}

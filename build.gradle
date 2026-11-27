@@ -27,6 +27,13 @@ sourceSets.main.resources {
 }
 
 repositories {
+    maven {
+        url = "https://maven.createmod.net"
+        content {
+            includeGroup("net.createmod.ponder")
+            includeGroup("com.simibubi.create")
+        }
+    }
     // Add here additional repositories if required by some of the dependencies below.
 }
 
@@ -116,6 +123,19 @@ configurations {
 }
 
 dependencies {
+    def ponderJar = providers.gradleProperty("ponderJar")
+    if (ponderJar.isPresent()) {
+        compileOnly(files(ponderJar.get()))
+    } else {
+        compileOnly("net.createmod.ponder:ponder-neoforge:1.0.82+mc1.21.1") { transitive = false }
+    }
+    def createJar = providers.gradleProperty("createJar")
+    if (createJar.isPresent()) {
+        compileOnly(files(createJar.get()))
+    } else {
+        compileOnly("com.simibubi.create:create-1.21.1:6.0.10-281:slim") { transitive = false }
+    }
+
     // Example optional mod dependency with JEI
     // The JEI API is declared for compile time use, while the full JEI artifact is used at runtime
     // compileOnly "mezz.jei:jei-${mc_version}-common-api:${jei_version}"
@@ -187,4 +207,68 @@ idea {
         downloadSources = true
         downloadJavadoc = true
     }
+}
+
+// Run Python in a separate JVM so program execution never blocks the game tick.
+configurations {
+    pythonRuntime
+}
+repositories {
+    mavenCentral {
+        content {
+            includeGroupByRegex("org\\.graalvm.*")
+            includeGroup("org.bouncycastle")
+            includeGroup("org.tukaani")
+            includeGroup("com.google.code.gson")
+            includeGroup("com.google.errorprone")
+        }
+    }
+}
+dependencies {
+    pythonRuntime("org.graalvm.polyglot:python-community:24.1.2")
+    pythonRuntime("com.google.code.gson:gson:2.11.0")
+}
+sourceSets {
+    python {
+        java.srcDir("src/python/java")
+        compileClasspath = configurations.pythonRuntime
+    }
+}
+tasks.register("pythonWorkerJar", Jar) {
+    dependsOn(tasks.named("compilePythonJava"))
+    from(sourceSets.python.output)
+    archiveFileName = "retro-python-worker.jar"
+    destinationDirectory = layout.buildDirectory.dir("python")
+}
+tasks.register("pythonBundle", Zip) {
+    dependsOn(tasks.named("pythonWorkerJar"))
+    from(configurations.pythonRuntime)
+    from(tasks.named("pythonWorkerJar"))
+    archiveFileName = "python-runtime.zip"
+    destinationDirectory = layout.buildDirectory.dir("generated/pythonResources/retrocomputers")
+}
+sourceSets.main.resources.srcDir(layout.buildDirectory.dir("generated/pythonResources"))
+tasks.named("processResources") {
+    dependsOn(tasks.named("pythonBundle"))
+}
+
+def nativeResources = layout.buildDirectory.dir("generated/nativeResources")
+tasks.register("nativeBundle", Exec) {
+    inputs.file("tools/bundle_native_toolchains.py")
+    outputs.dir(nativeResources)
+    commandLine("python3", "tools/bundle_native_toolchains.py")
+}
+// Additional output avoids storing a second copy of the large archive in processResources.
+sourceSets.main.output.dir([builtBy: "nativeBundle"], nativeResources)
+tasks.named("classes") { dependsOn(tasks.named("nativeBundle")) }
+tasks.register("quotaRuntime", Exec) {
+    inputs.files("tools/build_quota_runtime.py", "src/main/c/quota_fs.c")
+    outputs.dir(layout.buildDirectory.dir("generated/quotaResources"))
+    commandLine("python3", "tools/build_quota_runtime.py")
+}
+sourceSets.main.output.dir([builtBy: "quotaRuntime"], layout.buildDirectory.dir("generated/quotaResources"))
+tasks.named("classes") { dependsOn(tasks.named("quotaRuntime")) }
+tasks.named("jar", Jar) {
+    // Runtime ZIPs are already compressed; recompressing them only wastes build time.
+    entryCompression = org.gradle.api.tasks.bundling.ZipEntryCompression.STORED
 }

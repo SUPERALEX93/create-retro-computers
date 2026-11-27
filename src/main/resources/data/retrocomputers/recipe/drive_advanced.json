@@ -1,0 +1,107 @@
+{
+  "type": "create:sequenced_assembly",
+  "ingredient": {
+    "item": "retrocomputers:drive"
+  },
+  "loops": 2,
+  "results": [
+    {
+      "id": "retrocomputers:drive_advanced"
+    }
+  ],
+  "sequence": [
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "retrocomputers:incomplete_drive_advanced"
+        },
+        {
+          "item": "create:brass_sheet"
+        }
+      ],
+      "results": [
+        {
+          "id": "retrocomputers:incomplete_drive_advanced"
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "retrocomputers:incomplete_drive_advanced"
+        },
+        {
+          "item": "create:precision_mechanism"
+        }
+      ],
+      "results": [
+        {
+          "id": "retrocomputers:incomplete_drive_advanced"
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "retrocomputers:incomplete_drive_advanced"
+        },
+        {
+          "item": "retrocomputers:magnetic_tape"
+        }
+      ],
+      "results": [
+        {
+          "id": "retrocomputers:incomplete_drive_advanced"
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "retrocomputers:incomplete_drive_advanced"
+        },
+        {
+          "item": "retrocomputers:wiring_harness"
+        }
+      ],
+      "results": [
+        {
+          "id": "retrocomputers:incomplete_drive_advanced"
+        }
+      ]
+    },
+    {
+      "type": "create:pressing",
+      "ingredients": [
+        {
+          "item": "retrocomputers:incomplete_drive_advanced"
+        }
+      ],
+      "results": [
+        {
+          "id": "retrocomputers:incomplete_drive_advanced"
+        }
+      ]
+    },
+    {
+      "type": "create:cutting",
+      "ingredients": [
+        {
+          "item": "retrocomputers:incomplete_drive_advanced"
+        }
+      ],
+      "results": [
+        {
+          "id": "retrocomputers:incomplete_drive_advanced"
+        }
+      ]
+    }
+  ],
+  "transitional_item": {
+    "id": "retrocomputers:incomplete_drive_advanced"
+  }
+}

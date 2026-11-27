@@ -1,0 +1,21 @@
+{
+  "type": "create:mixing",
+  "ingredients": [
+    {
+      "item": "retrocomputers:resin"
+    },
+    {
+      "item": "minecraft:paper"
+    },
+    {
+      "item": "minecraft:iron_nugget"
+    }
+  ],
+  "results": [
+    {
+      "id": "retrocomputers:magnetic_tape",
+      "count": 3
+    }
+  ],
+  "heat_requirement": "heated"
+}

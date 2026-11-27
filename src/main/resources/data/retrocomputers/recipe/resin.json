@@ -1,0 +1,21 @@
+{
+  "type": "create:mixing",
+  "ingredients": [
+    {
+      "item": "minecraft:dried_kelp"
+    },
+    {
+      "item": "minecraft:paper"
+    },
+    {
+      "item": "minecraft:clay_ball"
+    }
+  ],
+  "results": [
+    {
+      "id": "retrocomputers:resin",
+      "count": 3
+    }
+  ],
+  "heat_requirement": "heated"
+}

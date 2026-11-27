@@ -1,0 +1,110 @@
+{
+  "type": "create:sequenced_assembly",
+  "ingredient": {
+    "item": "retrocomputers:copper_trace"
+  },
+  "loops": 1,
+  "results": [
+    {
+      "id": "retrocomputers:linker"
+    }
+  ],
+  "sequence": [
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "retrocomputers:incomplete_linker"
+        },
+        {
+          "item": "create:polished_rose_quartz"
+        }
+      ],
+      "results": [
+        {
+          "id": "retrocomputers:incomplete_linker"
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "retrocomputers:incomplete_linker"
+        },
+        {
+          "item": "retrocomputers:resin"
+        }
+      ],
+      "results": [
+        {
+          "id": "retrocomputers:incomplete_linker"
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "retrocomputers:incomplete_linker"
+        },
+        {
+          "item": "retrocomputers:wiring_harness"
+        }
+      ],
+      "results": [
+        {
+          "id": "retrocomputers:incomplete_linker"
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "retrocomputers:incomplete_linker"
+        },
+        {
+          "item": "create:golden_sheet"
+        }
+      ],
+      "results": [
+        {
+          "id": "retrocomputers:incomplete_linker"
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "retrocomputers:incomplete_linker"
+        },
+        {
+          "item": "retrocomputers:solder"
+        }
+      ],
+      "results": [
+        {
+          "id": "retrocomputers:incomplete_linker"
+        }
+      ]
+    },
+    {
+      "type": "create:pressing",
+      "ingredients": [
+        {
+          "item": "retrocomputers:incomplete_linker"
+        }
+      ],
+      "results": [
+        {
+          "id": "retrocomputers:incomplete_linker"
+        }
+      ]
+    }
+  ],
+  "transitional_item": {
+    "id": "retrocomputers:incomplete_linker"
+  }
+}

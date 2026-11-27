@@ -1,0 +1,83 @@
+{
+  "textures": {
+    "up": "retrocomputers:block/vent",
+    "down": "retrocomputers:block/vent",
+    "north": "retrocomputers:block/monitor",
+    "east": "retrocomputers:block/vent",
+    "south": "retrocomputers:block/vent",
+    "west": "retrocomputers:block/vent",
+    "particle": "retrocomputers:block/vent"
+  },
+  "ambientocclusion": false,
+  "elements": [
+    {
+      "from": [
+        0,
+        0,
+        0
+      ],
+      "to": [
+        16,
+        16,
+        16
+      ],
+      "shade": false,
+      "faces": {
+        "north": {
+          "texture": "#north",
+          "cullface": "north"
+        },
+        "up": {
+          "texture": "#up",
+          "uv": [
+            1.5,
+            1.5,
+            1.5,
+            1.5
+          ],
+          "cullface": "up"
+        },
+        "down": {
+          "texture": "#down",
+          "uv": [
+            1.5,
+            1.5,
+            1.5,
+            1.5
+          ],
+          "cullface": "down"
+        },
+        "east": {
+          "texture": "#east",
+          "uv": [
+            1.5,
+            1.5,
+            1.5,
+            1.5
+          ],
+          "cullface": "east"
+        },
+        "south": {
+          "texture": "#south",
+          "uv": [
+            1.5,
+            1.5,
+            1.5,
+            1.5
+          ],
+          "cullface": "south"
+        },
+        "west": {
+          "texture": "#west",
+          "uv": [
+            1.5,
+            1.5,
+            1.5,
+            1.5
+          ],
+          "cullface": "west"
+        }
+      }
+    }
+  ]
+}

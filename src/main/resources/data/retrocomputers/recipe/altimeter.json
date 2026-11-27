@@ -1,0 +1,126 @@
+{
+  "type": "create:sequenced_assembly",
+  "ingredient": {
+    "item": "retrocomputers:chassis_frame"
+  },
+  "loops": 2,
+  "results": [
+    {
+      "id": "retrocomputers:altimeter"
+    }
+  ],
+  "sequence": [
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "retrocomputers:incomplete_altimeter"
+        },
+        {
+          "item": "minecraft:clock"
+        }
+      ],
+      "results": [
+        {
+          "id": "retrocomputers:incomplete_altimeter"
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "retrocomputers:incomplete_altimeter"
+        },
+        {
+          "item": "create:precision_mechanism"
+        }
+      ],
+      "results": [
+        {
+          "id": "retrocomputers:incomplete_altimeter"
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "retrocomputers:incomplete_altimeter"
+        },
+        {
+          "item": "retrocomputers:board"
+        }
+      ],
+      "results": [
+        {
+          "id": "retrocomputers:incomplete_altimeter"
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "retrocomputers:incomplete_altimeter"
+        },
+        {
+          "item": "retrocomputers:wiring_harness"
+        }
+      ],
+      "results": [
+        {
+          "id": "retrocomputers:incomplete_altimeter"
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "retrocomputers:incomplete_altimeter"
+        },
+        {
+          "item": "create:brass_sheet"
+        }
+      ],
+      "results": [
+        {
+          "id": "retrocomputers:incomplete_altimeter"
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "retrocomputers:incomplete_altimeter"
+        },
+        {
+          "item": "retrocomputers:crt_glass"
+        }
+      ],
+      "results": [
+        {
+          "id": "retrocomputers:incomplete_altimeter"
+        }
+      ]
+    },
+    {
+      "type": "create:pressing",
+      "ingredients": [
+        {
+          "item": "retrocomputers:incomplete_altimeter"
+        }
+      ],
+      "results": [
+        {
+          "id": "retrocomputers:incomplete_altimeter"
+        }
+      ]
+    }
+  ],
+  "transitional_item": {
+    "id": "retrocomputers:incomplete_altimeter"
+  }
+}

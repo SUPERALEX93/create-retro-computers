@@ -1,0 +1,110 @@
+{
+  "type": "create:sequenced_assembly",
+  "ingredient": {
+    "item": "retrocomputers:psu"
+  },
+  "loops": 2,
+  "results": [
+    {
+      "id": "retrocomputers:psu_advanced"
+    }
+  ],
+  "sequence": [
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "retrocomputers:incomplete_psu_advanced"
+        },
+        {
+          "item": "create:electron_tube"
+        }
+      ],
+      "results": [
+        {
+          "id": "retrocomputers:incomplete_psu_advanced"
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "retrocomputers:incomplete_psu_advanced"
+        },
+        {
+          "item": "retrocomputers:ferrite_core"
+        }
+      ],
+      "results": [
+        {
+          "id": "retrocomputers:incomplete_psu_advanced"
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "retrocomputers:incomplete_psu_advanced"
+        },
+        {
+          "item": "create:sturdy_sheet"
+        }
+      ],
+      "results": [
+        {
+          "id": "retrocomputers:incomplete_psu_advanced"
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "retrocomputers:incomplete_psu_advanced"
+        },
+        {
+          "item": "retrocomputers:wiring_harness"
+        }
+      ],
+      "results": [
+        {
+          "id": "retrocomputers:incomplete_psu_advanced"
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "retrocomputers:incomplete_psu_advanced"
+        },
+        {
+          "item": "retrocomputers:solder"
+        }
+      ],
+      "results": [
+        {
+          "id": "retrocomputers:incomplete_psu_advanced"
+        }
+      ]
+    },
+    {
+      "type": "create:pressing",
+      "ingredients": [
+        {
+          "item": "retrocomputers:incomplete_psu_advanced"
+        }
+      ],
+      "results": [
+        {
+          "id": "retrocomputers:incomplete_psu_advanced"
+        }
+      ]
+    }
+  ],
+  "transitional_item": {
+    "id": "retrocomputers:incomplete_psu_advanced"
+  }
+}

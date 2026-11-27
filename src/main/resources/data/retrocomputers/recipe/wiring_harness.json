@@ -1,0 +1,17 @@
+{
+  "type": "create:deploying",
+  "ingredients": [
+    {
+      "item": "retrocomputers:copper_trace"
+    },
+    {
+      "item": "retrocomputers:resin"
+    }
+  ],
+  "results": [
+    {
+      "id": "retrocomputers:wiring_harness",
+      "count": 2
+    }
+  ]
+}

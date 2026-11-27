@@ -1,0 +1,21 @@
+{
+  "type": "create:mixing",
+  "ingredients": [
+    {
+      "item": "minecraft:glass"
+    },
+    {
+      "item": "minecraft:glowstone_dust"
+    },
+    {
+      "item": "retrocomputers:silicon_dust"
+    }
+  ],
+  "results": [
+    {
+      "id": "retrocomputers:crt_glass",
+      "count": 2
+    }
+  ],
+  "heat_requirement": "heated"
+}

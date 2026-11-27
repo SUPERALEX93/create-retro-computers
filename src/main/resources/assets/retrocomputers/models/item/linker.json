@@ -1,0 +1,42 @@
+{
+  "parent": "minecraft:item/handheld",
+  "textures": {
+    "layer0": "retrocomputers:item/linker"
+  },
+  "display": {
+    "firstperson_righthand": {
+      "rotation": [
+        0,
+        -90,
+        25
+      ],
+      "translation": [
+        -1,
+        4,
+        0
+      ],
+      "scale": [
+        0.55,
+        0.55,
+        0.55
+      ]
+    },
+    "firstperson_lefthand": {
+      "rotation": [
+        0,
+        90,
+        -25
+      ],
+      "translation": [
+        -1,
+        4,
+        0
+      ],
+      "scale": [
+        0.55,
+        0.55,
+        0.55
+      ]
+    }
+  }
+}

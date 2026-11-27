@@ -1,0 +1,126 @@
+{
+  "type": "create:sequenced_assembly",
+  "ingredient": {
+    "item": "retrocomputers:chassis_frame"
+  },
+  "loops": 2,
+  "results": [
+    {
+      "id": "retrocomputers:tilt_sensor"
+    }
+  ],
+  "sequence": [
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "retrocomputers:incomplete_tilt_sensor"
+        },
+        {
+          "item": "minecraft:compass"
+        }
+      ],
+      "results": [
+        {
+          "id": "retrocomputers:incomplete_tilt_sensor"
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "retrocomputers:incomplete_tilt_sensor"
+        },
+        {
+          "item": "create:precision_mechanism"
+        }
+      ],
+      "results": [
+        {
+          "id": "retrocomputers:incomplete_tilt_sensor"
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "retrocomputers:incomplete_tilt_sensor"
+        },
+        {
+          "item": "retrocomputers:board"
+        }
+      ],
+      "results": [
+        {
+          "id": "retrocomputers:incomplete_tilt_sensor"
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "retrocomputers:incomplete_tilt_sensor"
+        },
+        {
+          "item": "retrocomputers:wiring_harness"
+        }
+      ],
+      "results": [
+        {
+          "id": "retrocomputers:incomplete_tilt_sensor"
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "retrocomputers:incomplete_tilt_sensor"
+        },
+        {
+          "item": "create:brass_sheet"
+        }
+      ],
+      "results": [
+        {
+          "id": "retrocomputers:incomplete_tilt_sensor"
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "retrocomputers:incomplete_tilt_sensor"
+        },
+        {
+          "item": "retrocomputers:crt_glass"
+        }
+      ],
+      "results": [
+        {
+          "id": "retrocomputers:incomplete_tilt_sensor"
+        }
+      ]
+    },
+    {
+      "type": "create:pressing",
+      "ingredients": [
+        {
+          "item": "retrocomputers:incomplete_tilt_sensor"
+        }
+      ],
+      "results": [
+        {
+          "id": "retrocomputers:incomplete_tilt_sensor"
+        }
+      ]
+    }
+  ],
+  "transitional_item": {
+    "id": "retrocomputers:incomplete_tilt_sensor"
+  }
+}

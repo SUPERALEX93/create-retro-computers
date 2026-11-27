@@ -1,0 +1,29 @@
+{
+  "variants": {
+    "facing=up": {
+      "model": "retrocomputers:block/interface_module"
+    },
+    "facing=down": {
+      "model": "retrocomputers:block/interface_module",
+      "x": 180
+    },
+    "facing=north": {
+      "model": "retrocomputers:block/interface_module",
+      "x": 90
+    },
+    "facing=south": {
+      "model": "retrocomputers:block/interface_module",
+      "x": 270
+    },
+    "facing=east": {
+      "model": "retrocomputers:block/interface_module",
+      "x": 90,
+      "y": 90
+    },
+    "facing=west": {
+      "model": "retrocomputers:block/interface_module",
+      "x": 90,
+      "y": 270
+    }
+  }
+}

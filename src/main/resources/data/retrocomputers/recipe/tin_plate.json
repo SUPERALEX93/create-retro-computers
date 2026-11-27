@@ -1,0 +1,13 @@
+{
+  "type": "create:pressing",
+  "ingredients": [
+    {
+      "item": "retrocomputers:tin_ingot"
+    }
+  ],
+  "results": [
+    {
+      "id": "retrocomputers:tin_plate"
+    }
+  ]
+}

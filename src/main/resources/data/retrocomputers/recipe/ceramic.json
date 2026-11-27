@@ -1,0 +1,21 @@
+{
+  "type": "create:mixing",
+  "ingredients": [
+    {
+      "item": "retrocomputers:silicon_dust"
+    },
+    {
+      "item": "minecraft:clay_ball"
+    },
+    {
+      "item": "minecraft:quartz"
+    }
+  ],
+  "results": [
+    {
+      "id": "retrocomputers:ceramic",
+      "count": 2
+    }
+  ],
+  "heat_requirement": "heated"
+}

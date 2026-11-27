@@ -1,0 +1,94 @@
+{
+  "type": "create:sequenced_assembly",
+  "ingredient": {
+    "item": "retrocomputers:board"
+  },
+  "loops": 2,
+  "results": [
+    {
+      "id": "retrocomputers:drive"
+    }
+  ],
+  "sequence": [
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "retrocomputers:incomplete_drive"
+        },
+        {
+          "item": "retrocomputers:magnetic_tape"
+        }
+      ],
+      "results": [
+        {
+          "id": "retrocomputers:incomplete_drive"
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "retrocomputers:incomplete_drive"
+        },
+        {
+          "item": "create:shaft"
+        }
+      ],
+      "results": [
+        {
+          "id": "retrocomputers:incomplete_drive"
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "retrocomputers:incomplete_drive"
+        },
+        {
+          "item": "retrocomputers:wiring_harness"
+        }
+      ],
+      "results": [
+        {
+          "id": "retrocomputers:incomplete_drive"
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "retrocomputers:incomplete_drive"
+        },
+        {
+          "item": "create:iron_sheet"
+        }
+      ],
+      "results": [
+        {
+          "id": "retrocomputers:incomplete_drive"
+        }
+      ]
+    },
+    {
+      "type": "create:pressing",
+      "ingredients": [
+        {
+          "item": "retrocomputers:incomplete_drive"
+        }
+      ],
+      "results": [
+        {
+          "id": "retrocomputers:incomplete_drive"
+        }
+      ]
+    }
+  ],
+  "transitional_item": {
+    "id": "retrocomputers:incomplete_drive"
+  }
+}

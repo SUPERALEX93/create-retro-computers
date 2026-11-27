@@ -1,0 +1,20 @@
+{
+  "type": "create:compacting",
+  "ingredients": [
+    {
+      "item": "minecraft:iron_nugget"
+    },
+    {
+      "item": "minecraft:iron_nugget"
+    },
+    {
+      "item": "minecraft:redstone"
+    }
+  ],
+  "results": [
+    {
+      "id": "retrocomputers:ferrite_core",
+      "count": 2
+    }
+  ]
+}

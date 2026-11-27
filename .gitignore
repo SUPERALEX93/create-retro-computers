@@ -38,3 +38,22 @@ run/
 **/src/generated/**/.cache/
 repo/
 !**/src/**/repo/
+
+### Local game data and build artifacts ###
+art/
+*.jar
+!gradle/wrapper/gradle-wrapper.jar
+*.jar.disabled
+*.installing
+*.log
+*.zip
+*.tar.gz
+mods/
+saves/
+toolchains/
+.env
+.env.*
+*.pem
+*.key
+__pycache__/
+*.pyc

@@ -1,0 +1,18 @@
+{
+  "type": "create:mixing",
+  "ingredients": [
+    {
+      "item": "retrocomputers:tin_ingot"
+    },
+    {
+      "item": "minecraft:copper_ingot"
+    }
+  ],
+  "results": [
+    {
+      "id": "retrocomputers:solder",
+      "count": 4
+    }
+  ],
+  "heat_requirement": "heated"
+}

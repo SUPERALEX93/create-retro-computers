@@ -1,0 +1,14 @@
+{
+  "keyboard.tap": {
+    "subtitle": "subtitles.retrocomputers.keyboard",
+    "sounds": [
+      "retrocomputers:keyboard/tap_1",
+      "retrocomputers:keyboard/tap_2",
+      "retrocomputers:keyboard/tap_3"
+    ]
+  },
+  "keyboard.bar": {
+    "subtitle": "subtitles.retrocomputers.keyboard",
+    "sounds": ["retrocomputers:keyboard/bar"]
+  }
+}

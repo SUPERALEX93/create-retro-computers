@@ -1,0 +1,95 @@
+{
+  "type": "create:sequenced_assembly",
+  "ingredient": {
+    "item": "retrocomputers:chassis_frame"
+  },
+  "loops": 1,
+  "results": [
+    {
+      "id": "retrocomputers:interface_module",
+      "count": 2
+    }
+  ],
+  "sequence": [
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "retrocomputers:incomplete_interface_module"
+        },
+        {
+          "item": "retrocomputers:board"
+        }
+      ],
+      "results": [
+        {
+          "id": "retrocomputers:incomplete_interface_module"
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "retrocomputers:incomplete_interface_module"
+        },
+        {
+          "item": "retrocomputers:wiring_harness"
+        }
+      ],
+      "results": [
+        {
+          "id": "retrocomputers:incomplete_interface_module"
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "retrocomputers:incomplete_interface_module"
+        },
+        {
+          "item": "minecraft:comparator"
+        }
+      ],
+      "results": [
+        {
+          "id": "retrocomputers:incomplete_interface_module"
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "retrocomputers:incomplete_interface_module"
+        },
+        {
+          "item": "retrocomputers:solder"
+        }
+      ],
+      "results": [
+        {
+          "id": "retrocomputers:incomplete_interface_module"
+        }
+      ]
+    },
+    {
+      "type": "create:pressing",
+      "ingredients": [
+        {
+          "item": "retrocomputers:incomplete_interface_module"
+        }
+      ],
+      "results": [
+        {
+          "id": "retrocomputers:incomplete_interface_module"
+        }
+      ]
+    }
+  ],
+  "transitional_item": {
+    "id": "retrocomputers:incomplete_interface_module"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "providers": [
+    {
+      "type": "ttf",
+      "file": "retrocomputers:terminal.ttf",
+      "size": 10,
+      "oversample": 2,
+      "shift": [0, 1]
+    },
+    {
+      "type": "reference",
+      "id": "minecraft:default"
+    }
+  ]
+}

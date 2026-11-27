@@ -1,6 +1,9 @@
-name: Build
+name: Compile Java
 
 on: [push, pull_request]
+
+permissions:
+  contents: read
 
 jobs:
   build:
@@ -21,5 +24,5 @@ jobs:
       - name: Setup Gradle
         uses: gradle/actions/setup-gradle@v4
 
-      - name: Build with Gradle
-        run: ./gradlew build
+      - name: Compile mod and Python worker
+        run: ./gradlew compileJava compilePythonJava --no-daemon

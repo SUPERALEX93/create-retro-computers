@@ -1,0 +1,32 @@
+#!/usr/bin/python3
+"""Machine-readable computer API for all native languages; stdout is JSON."""
+import base64
+import fcntl
+import os
+import pathlib
+import sys
+import time
+
+if len(sys.argv) < 2 or sys.argv[1] not in ("name", "ports", "read", "set", "disk"):
+    print("computer name | disk | ports | read m1 | set m1 0..15", file=sys.stderr)
+    sys.exit(2)
+
+root = pathlib.Path("/build")
+with (root / ".rpc-lock").open("w") as lock:
+    fcntl.flock(lock, fcntl.LOCK_EX)
+    response = root / ".rpc-response"
+    response.unlink(missing_ok=True)
+    lines = [sys.argv[1]] + [base64.b64encode(a.encode()).decode() for a in sys.argv[2:]]
+    temporary = root / ".rpc-write"
+    temporary.write_text("\n".join(lines) + "\n")
+    os.replace(temporary, root / ".rpc-request")
+    deadline = time.monotonic() + 30
+    while not response.exists():
+        if time.monotonic() > deadline:
+            print("Computer API timeout", file=sys.stderr)
+            sys.exit(1)
+        time.sleep(.01)
+    status, result = response.read_text().split("\t", 1)
+    result = base64.b64decode(result).decode()
+    print(result, file=sys.stdout if status == "OK" else sys.stderr)
+    sys.exit(0 if status == "OK" else 1)

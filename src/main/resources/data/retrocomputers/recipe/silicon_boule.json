@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:smelting",
+  "ingredient": {
+    "item": "retrocomputers:silicon_blank"
+  },
+  "result": {
+    "id": "retrocomputers:silicon_boule"
+  },
+  "cookingtime": 320,
+  "experience": 0.5
+}
